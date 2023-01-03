@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+    <div class="header">
+        <div class="title">Hello3832<p
+                style="font-size: 12px;display:flex; color: rgb(119, 119, 119); align-items: center;">아무거나 개발하는 사람</p>
+        </div>
+        <div class="back" onclick="mainHome()"><i class="fa-solid fa-arrow-right"></i></div>
+    </div>
+
+    <div class="main">
+        <div class="info">
+            <h1 class="info-name">Hello3832</h1>
+            <p class="info-description">안녕하세요. 그냥 아무거나 개발하는 사람입니다.</p>
+        </div>
+
+        <div class="links">
+            <a class="sns" id="github" onclick="social()"><i class="fa-brands fa-internet-explorer"></i> 소셜 링크</a>
+            <a class="sns" id="github" onclick="languages()"><i class="fa-solid fa-code"></i> 코딩 언어</a>
+            <a class="sns" id="github" onclick="arrowDesc()"><i class="fa-solid fa-question"></i> 저는 누구일까요</a>
+        </div>
+    
+
+    </div>
+    </center>
+
+    <script src="https://kit.fontawesome.com/00ce33642a.js" crossorigin="anonymous"></script>
+    <script>
+        let main = document.getElementsByClassName('main')[0];
+        let header = document.getElementsByClassName('header')[0];
+        let desc = document.getElementsByClassName('info-description')[0];
+
+        header.style.display = 'none';
+        header.style.opacity = 0;
+        const social = () => {
+            main.style.animation = 'fade 0.3s forwards';
+            header.style.animation = 'fade 0.3s forwards';
+
+            let timed = setTimeout(() => {
+                main.style.opacity = 0;
+                header.style.display = 'flex';
+                main.innerHTML = `
+                <div class="links">
+                    <h1 class="info-name">SOCIAL LINK</h1>
+                    <br>
+                    <a id="discord" class="sns" href="https://discord.com/users/764365162273964043" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                    <a id="github" class="sns" href="https://github.com/Hello50511" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a id="tistory" class="sns" href="https://hello5051.k-r.pw/" target="_blank">
+                        <i class="fa-solid fa-t"></i> TISTORY
+                    </a>
+                    <a id="naver" class="sns" href="https://blog.naver.com/devhello5051" target="_blank"><img src="images/NAVER.png" width="20">Naver Blog</a>
+                </div>
+                `;
+                main.style.animation = 'unfade 0.5s forwards';
+                header.style.animation = 'unfade 0.5s forwards';
+                clearTimeout(timed)
+            }, 0.7 * 1000)
+        };
+
+        const languages = () => {
+            main.style.animation = 'fade 0.3s forwards';
+            header.style.animation = 'fade 0.3s forwards';
+
+            let timed = setTimeout(() => {
+                main.style.opacity = 0;
+                header.style.display = 'flex';
+                main.innerHTML = `
+                    <div class="links">
+                        <h1 class="info-name">LANGUAGE</h1>
+                        <div id="lists">
+                            <div class="sns" id="github"><h3><i class="fa-brands fa-node-js nodejs lang"></i><br>Node.js</h3></div>
+                            <div class="sns" id="github"><h3><i class="fa-brands fa-python python lang"></i><br>Python</h3></div>
+                            <div class="sns" id="github"><h3><i class="fa-brands fa-unity unity lang"></i><br>Unity C#</h3></div>
+                            <div class="sns" id="github"><h3><i class="fa-brands fa-html5 html lang"></i><br> HTML</h3></div>
+                            <div class="sns" id="github"><h3><i class="fa-brands fa-css3 css lang"></i><br>CSS</h3></div>
+                            <div class="sns" id="github"><h3><i class="fa-brands fa-js js lang"></i><br>(WEB) JS</h3></div>
+                            <div class="sns" id="github"><h3><i class="fa-brands fa-react react lang"></i><br>React.js (VITE)</h3></div>
+                        </div>
+                    </div>
+                `;
+                main.style.animation = 'unfade 0.5s forwards';
+                header.style.animation = 'unfade 0.5s forwards';
+                clearTimeout(timed)
+            }, 0.7 * 1000)
+        }
+
+        const mainHome = () => {
+            main.style.opacity = 1;
+            header.style.opacity = 1;
+            main.style.animation = 'fade 0.3s forwards';
+            header.style.animation = 'fade 0.3s forwards';
+            let timed = setTimeout(() => {
+                window.location.reload();
+            }, 0.7 * 1000)
+        }
+
+        const arrowDesc = () => {
+            desc.style.color='#0074be';
+            setTimeout(() => {
+                desc.style.color = '#fff';
+            }, 0.5*1000)
+        }
+    </script>
+</body>
+</html>
